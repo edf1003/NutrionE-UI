@@ -1,0 +1,23 @@
+<div class="app-root-child">
+  <ngx-loading-bar [color]="'#01bcf1'" />
+
+  <mdb-sidenav-layout>
+    <mdb-sidenav
+      #sidenav="mdbSidenav"
+      [hidden]="sideNavOptions.hidden"
+      [mode]="sideNavOptions.mode"
+      color="dark"
+      [width]="190">
+      <app-side-bar />
+    </mdb-sidenav>
+    <mdb-sidenav-content #sidenavContent>
+      <app-header-bar (sideNavToggled)="sidenav.toggle(); lockSideBar()" />
+      <div id="main-content" class="flex-grow-1 position-relative">
+        <div class="router-output fadeInItem">
+          <router-outlet />
+        </div>
+      </div>
+    </mdb-sidenav-content>
+  </mdb-sidenav-layout>
+</div>
+>

@@ -1,0 +1,21 @@
+<nav class="navbar sticky-top px-3 bg-white">
+  <div class="d-flex align-items-center">
+    <button class="btn btn-link shadow-0 p-2" (click)="toggleSideBar()">
+      <i class="fas fa-bars fa-lg d-none d-md-block me-2" style="color: primary"></i>
+      <img
+        src="assets/imgs/logo_white.png"
+        alt="NutrionE"
+        draggable="false"
+        width="25"
+        class="d-block d-md-none me-1" />
+    </button>
+    <div>
+      <h6 class="mb-0" style="line-height: 16px">
+        {{ breadcrumb.join(BREADCRUMB_SEPARATOR) }}
+      </h6>
+      <small>
+        {{ user?.name || '-' }}
+      </small>
+    </div>
+  </div>
+</nav>

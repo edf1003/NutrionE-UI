@@ -1,0 +1,51 @@
+<form [formGroup]="datepickerForm" #formTpl="ngForm" *ngIf="datepickerForm">
+  <mdb-form-control [ngClass]="startMarginBottomClass">
+    <input
+      mdbInput
+      mdbValidate
+      class="form-control datepicker-input"
+      id="startDate"
+      formControlName="startDate"
+      type="text"
+      readonly="readonly"
+      [mdbDatepicker]="startDateDatepicker"
+      (click)="startDateDatepicker.toggle()" />
+    <label mdbLabel class="form-label" for="startDate">{{ startLabel }}</label>
+    <app-validation-errors [control]="datepickerForm.controls.startDate" />
+    <div class="inline-datepicker-clear-btn" (click)="onStartDateClear()" *ngIf="!startRequired">✕</div>
+    <mdb-datepicker-toggle [mdbDatepicker]="startDateDatepicker" />
+    <mdb-datepicker
+      #startDateDatepicker
+      [inline]="true"
+      [options]="utilsService.datepickerOptions"
+      [startDay]="1"
+      [maxDate]="maxDateForStartDate"
+      [startDate]="datepickerForm.value.startDate"
+      (dateChanged)="onStartDateChange($event)" />
+  </mdb-form-control>
+
+  <mdb-form-control [ngClass]="endMarginBottomClass" *ngIf="range">
+    <input
+      mdbInput
+      mdbValidate
+      class="form-control datepicker-input"
+      id="endDate"
+      formControlName="endDate"
+      type="text"
+      readonly="readonly"
+      [mdbDatepicker]="endDateDatepicker"
+      (click)="endDateDatepicker.toggle()" />
+    <label mdbLabel class="form-label" for="endDate">{{ endLabel }}</label>
+    <app-validation-errors [control]="datepickerForm.controls.endDate" />
+    <div class="inline-datepicker-clear-btn" (click)="onEndDateClear()" *ngIf="!endRequired">✕</div>
+    <mdb-datepicker-toggle [mdbDatepicker]="endDateDatepicker" />
+    <mdb-datepicker
+      #endDateDatepicker
+      [inline]="true"
+      [options]="utilsService.datepickerOptions"
+      [startDay]="1"
+      [minDate]="minDateForEndDate"
+      [startDate]="datepickerForm.value.endDate"
+      (dateChanged)="onEndDateChange($event)" />
+  </mdb-form-control>
+</form>

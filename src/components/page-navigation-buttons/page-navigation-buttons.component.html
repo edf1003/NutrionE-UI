@@ -1,0 +1,48 @@
+<div class="btn-group shadow-3" role="group">
+  <button
+    type="button"
+    class="btn btn-link px-3"
+    (click)="p.hide(); back.emit()"
+    [disabled]="currentPage === 0 || loading">
+    <fa-icon icon="chevron-left" />
+  </button>
+  <button
+    type="button"
+    class="btn btn-link text-lowercase px-2"
+    [class.d-none]="onlyArrows"
+    (click)="onSeekClick(p)"
+    [mdbPopover]="seekPopContent"
+    placement="bottom"
+    trigger="manual"
+    #p="mdbPopover">
+    {{ getText() }} de {{ totalCount }}
+  </button>
+  <button
+    type="button"
+    class="btn btn-link px-3"
+    (click)="p.hide(); forward.emit()"
+    [disabled]="(currentPage + 1) * pageSize >= totalCount || loading">
+    <fa-icon icon="chevron-right" />
+  </button>
+</div>
+
+<ng-template #seekPopContent>
+  <div class="bmd-pt-0 seek font-weight-500 d-flex align-items-center">
+    <span>Pág</span>
+    <input
+      [(ngModel)]="seekPage"
+      min="1"
+      max="totalPages"
+      type="number"
+      style="max-width: 60px; border: 0; border-bottom: 1px solid lightgray"
+      step="1"
+      class="my-0" />
+    <span>de {{ totalPages }}</span>
+    <button
+      class="btn btn-sm d-inline btn-primary"
+      [disabled]="seekButtonDisabled()"
+      (click)="p.hide(); seek.emit(seekPage - 1)">
+      <fa-icon icon="arrow-right" />
+    </button>
+  </div>
+</ng-template>

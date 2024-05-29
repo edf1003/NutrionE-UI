@@ -1,0 +1,38 @@
+<!-- eslint-disable @angular-eslint/template/label-has-associated-control -->
+<div class="input-group flex-nowrap">
+  <mdb-form-control class="my-0 flex-grow-1">
+    <input
+      mdbInput
+      mdbValidate
+      class="form-control"
+      [value]="value"
+      (input)="onInput($event)"
+      type="number"
+      [attr.min]="min"
+      [attr.max]="max" />
+    <label mdbLabel class="form-label">{{ label }}</label>
+  </mdb-form-control>
+  <ng-container *ngIf="append">
+    <span class="input-group-text">{{ append }}</span>
+  </ng-container>
+  <ng-container *ngIf="showButtons">
+    <button
+      class="btn btn-outline-light px-3"
+      type="button"
+      (click)="increase()"
+      mdbRipple
+      rippleColor="primary"
+      style="border-width: 1px; border-color: #bdbdbd">
+      <fa-icon icon="plus" class="text-primary" />
+    </button>
+    <button
+      class="btn btn-outline-light px-3"
+      type="button"
+      (click)="decrease()"
+      mdbRipple
+      rippleColor="primary"
+      style="border-width: 1px; border-color: #bdbdbd">
+      <fa-icon icon="minus" class="text-primary" />
+    </button>
+  </ng-container>
+</div>

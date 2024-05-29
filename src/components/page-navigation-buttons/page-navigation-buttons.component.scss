@@ -1,0 +1,9 @@
+.seek > * {
+  margin-left: 3px;
+  margin-right: 3px;
+  flex-shrink: 0;
+}
+
+:host {
+  flex-shrink: 0;
+}

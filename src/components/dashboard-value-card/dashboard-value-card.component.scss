@@ -1,0 +1,13 @@
+@import 'theme-variables';
+
+.clickable {
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: lighten($primary, 70%);
+  }
+
+  &:active {
+    background-color: lighten($primary, 50%);
+  }
+}

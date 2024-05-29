@@ -1,0 +1,81 @@
+<div class="mx-3 pt-3 pb-5">
+  <form [formGroup]="dataForm" (ngSubmit)="submitForm()" #formTpl="ngForm" *ngIf="dataForm" class="ms-2 me-2">
+    <h5 class="mb-4">Datos del usuario</h5>
+    <mdb-form-control class="mt-3">
+      <input mdbValidate mdbInput class="form-control" id="name" formControlName="name" type="text" maxlength="100" />
+      <label mdbLabel for="name" class="form-label">Nombre</label>
+      <app-validation-errors [control]="dataForm.controls.name" />
+    </mdb-form-control>
+
+    <mdb-form-control class="mt-3">
+      <input mdbValidate mdbInput class="form-control" id="age" formControlName="age" type="number" min="0" max="100" />
+      <label mdbLabel for="age" class="form-label">Edad</label>
+      <app-validation-errors [control]="dataForm.controls.age" />
+    </mdb-form-control>
+
+    <mdb-form-control class="mt-3">
+      <input mdbValidate mdbInput class="form-control" id="email" formControlName="email" type="email" />
+      <label mdbLabel for="email" class="form-label">Correo</label>
+      <app-validation-errors [control]="dataForm.controls.email" />
+    </mdb-form-control>
+
+    <mdb-form-control class="mt-3">
+      <input
+        mdbValidate
+        mdbInput
+        class="form-control"
+        id="height"
+        formControlName="height"
+        type="number"
+        min="0"
+        max="300" />
+      <label mdbLabel for="height" class="form-label">Altura</label>
+      <app-validation-errors [control]="dataForm.controls.height" />
+    </mdb-form-control>
+
+    <mdb-form-control class="mt-3">
+      <input
+        mdbValidate
+        mdbInput
+        class="form-control"
+        id="weight"
+        formControlName="weight"
+        type="number"
+        min="0"
+        max="400" />
+      <label mdbLabel for="weight" class="form-label">Peso</label>
+      <app-validation-errors [control]="dataForm.controls.weight" />
+    </mdb-form-control>
+
+    <mdb-form-control class="mt-3">
+      <input
+        mdbValidate
+        mdbInput
+        class="form-control"
+        id="basalMetabolism"
+        formControlName="basalMetabolism"
+        type="number"
+        min="0" />
+      <label mdbLabel for="basalMetabolism" class="form-label">Metablismo basal</label>
+      <app-validation-errors [control]="dataForm.controls.basalMetabolism" />
+    </mdb-form-control>
+
+    <app-nb-simple-select formControlName="gender" label="Género" [options]="genders" [clearButton]="false" />
+
+    <app-nb-simple-select
+      formControlName="dietObjective"
+      label="Objetivo"
+      [options]="dietObjectives"
+      [clearButton]="false" />
+
+    <app-nb-simple-select
+      formControlName="dietType"
+      label="Tipo de dieta"
+      [options]="dietTypes"
+      [clearButton]="false" />
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary me-1" (click)="close()">Cancelar</button>
+      <button type="submit" class="btn btn-primary">Guardar</button>
+    </div>
+  </form>
+</div>

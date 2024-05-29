@@ -1,0 +1,13 @@
+<mdb-form-control class="mb-0">
+  <input
+    mdbInput
+    type="text"
+    class="form-control"
+    [ngClass]="{ 'form-control-sm': small }"
+    id="search"
+    name="search"
+    [ngModel]="search"
+    (ngModelChange)="onModelChange($event)"
+    [placeholder]="placeholder" />
+  <label mdbLabel for="search" class="form-label">{{ label }}</label>
+</mdb-form-control>

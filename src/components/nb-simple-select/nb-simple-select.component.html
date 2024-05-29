@@ -1,0 +1,24 @@
+<!-- eslint-disable @angular-eslint/template/label-has-associated-control -->
+<mdb-form-control>
+  <mdb-select
+    mdbValidate
+    [clearButton]="clearButton"
+    [id]="formControlName"
+    [formControl]="control"
+    [optionHeight]="showLabel ? 50 : 40"
+    [filter]="filter"
+    [filterPlaceholder]="filterPlaceholder"
+    [multiple]="multiple"
+    [visibleOptions]="visibleOptions"
+    notFoundMsg="No se encontraron resultados">
+    <mdb-option
+      *ngFor="let option of options; trackBy: trackBy"
+      [value]="option.value"
+      [label]="option.label"
+      [disabled]="option.disabled">
+      {{ option.label }}
+      <span class="option-secondary-text" *ngIf="showLabel">{{ option.sublabel }}</span>
+    </mdb-option>
+  </mdb-select>
+  <label mdbLabel class="form-label">{{ label }}</label>
+</mdb-form-control>

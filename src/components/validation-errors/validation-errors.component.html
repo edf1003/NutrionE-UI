@@ -1,0 +1,3 @@
+<ng-container *ngIf="control && control.dirty && control.invalid && control.errors">
+  <mdb-error [ngClass]="errorClass">{{ errorText }}</mdb-error>
+</ng-container>

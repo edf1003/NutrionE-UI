@@ -1,0 +1,46 @@
+<div class="sidenav-menu bg-primary" style="height: 100vh">
+  <a class="d-flex justify-content-center pt-3 pb-2" style="min-width: 50px" [routerLink]="['/home']">
+    <img src="assets/imgs/logo_white.png" alt="NutrionE" draggable="false" width="120" />
+  </a>
+
+  <ng-container>
+    <mdb-sidenav-item>
+      <a class="sidenav-link" [routerLink]="['home']" [ngClass]="{ active: url === 'home' }" [@fadeInEnter]>
+        <i class="fas fa-home fa-fw me-2" style="color: white"></i>
+        <span>Inicio</span>
+      </a>
+    </mdb-sidenav-item>
+  </ng-container>
+
+  <ng-container>
+    <mdb-sidenav-item>
+      <a class="sidenav-link" [routerLink]="['diets']" [ngClass]="{ active: url === 'diets' }" [@fadeInEnter]>
+        <i class="fa-solid fa-utensils fa-fw me-2" style="color: white"></i>
+        <span>Dietas</span>
+      </a>
+    </mdb-sidenav-item>
+  </ng-container>
+
+  <ng-container>
+    <mdb-sidenav-item>
+      <a class="sidenav-link" [routerLink]="['routines']" [ngClass]="{ active: url === 'routines' }" [@fadeInEnter]>
+        <i class="fa-solid fa-dumbbell fa-fw me-2" style="color: white"></i>
+        <span>Ejercicios</span>
+      </a>
+    </mdb-sidenav-item>
+  </ng-container>
+
+  <ng-container>
+    <mdb-sidenav-item>
+      <a class="sidenav-link" [routerLink]="['user']" [ngClass]="{ active: url === 'user' }" [@fadeInEnter]>
+        <i class="fa-solid fa-user fa-fw me-2" style="color: white"></i>
+        <span>Usuario</span>
+      </a>
+    </mdb-sidenav-item>
+  </ng-container>
+  <hr class="my-2" />
+
+  <span class="text-center mt-3">
+    <small class="d-block">{{ currentDate | date: 'dd MMM yyyy' }}</small>
+  </span>
+</div>

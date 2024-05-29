@@ -1,0 +1,110 @@
+{
+  "root": true,
+  "ignorePatterns": ["projects/**/*", "**/*.js"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "printWidth": 120,
+        "tabWidth": 2,
+        "endOfLine": "auto",
+        "singleQuote": true,
+        "quoteProps": "consistent",
+        "trailingComma": "all",
+        "arrowParens": "avoid",
+        "bracketSameLine": true
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["./tsconfig.json"],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended-type-checked",
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:@typescript-eslint/stylistic",
+        "plugin:deprecation/recommended",
+        "plugin:prettier/recommended"
+      ],
+      "rules": {
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "prefix": "app",
+            "style": "kebab-case",
+            "type": ["element", "attribute"]
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "prefix": "app",
+            "style": "camelCase",
+            "type": "attribute"
+          }
+        ],
+        "@typescript-eslint/unbound-method": [
+          "error",
+          {
+            "ignoreStatic": true
+          }
+        ],
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "prettier/prettier": [
+          "error",
+          {
+            "printWidth": 120,
+            "tabWidth": 2,
+            "endOfLine": "auto",
+            "singleQuote": true,
+            "quoteProps": "consistent",
+            "trailingComma": "all",
+            "arrowParens": "avoid",
+            "bracketSameLine": true
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended", "plugin:@angular-eslint/template/accessibility"],
+      "rules": {
+        "@angular-eslint/template/conditional-complexity": ["error", { "maxComplexity": 4 }],
+        "@angular-eslint/template/cyclomatic-complexity": ["error", { "maxComplexity": 6 }],
+        "@angular-eslint/template/no-duplicate-attributes": "error",
+        "@angular-eslint/template/use-track-by-function": "warn",
+        "@angular-eslint/template/prefer-self-closing-tags": "error",
+        "@angular-eslint/template/click-events-have-key-events": "off",
+        "@angular-eslint/template/interactive-supports-focus": "off"
+      }
+    },
+    {
+      "files": ["*.html"],
+      "excludedFiles": ["*inline-template-*.component.html"],
+      "extends": ["plugin:prettier/recommended"],
+      "rules": {
+        "prettier/prettier": [
+          "error",
+          {
+            "parser": "angular",
+            "printWidth": 120,
+            "tabWidth": 2,
+            "endOfLine": "auto",
+            "singleQuote": true,
+            "quoteProps": "consistent",
+            "trailingComma": "all",
+            "arrowParens": "avoid",
+            "bracketSameLine": true
+          }
+        ]
+      }
+    }
+  ]
+}

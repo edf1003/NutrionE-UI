@@ -1,0 +1,22 @@
+<mdb-form-control class="mb-0">
+  <mdb-select
+    [(ngModel)]="value"
+    (ngModelChange)="valueChange.emit($event)"
+    [ngClass]="{ 'select-sm': small }"
+    [clearButton]="clearButton"
+    [optionHeight]="showLabel ? 50 : 40"
+    [filter]="filter"
+    [filterPlaceholder]="filterPlaceholder"
+    [multiple]="multiple"
+    [visibleOptions]="visibleOptions"
+    notFoundMsg="No se encontraron resultados">
+    <mdb-option
+      *ngFor="let option of options; trackBy: trackBy"
+      [value]="option.value"
+      [label]="option.label"
+      [disabled]="option.disabled">
+      {{ option.label }}
+      <span class="option-secondary-text" *ngIf="showLabel">{{ option.sublabel }}</span>
+    </mdb-option>
+  </mdb-select>
+</mdb-form-control>

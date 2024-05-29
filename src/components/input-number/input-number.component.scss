@@ -1,0 +1,12 @@
+.input-group,
+.input-group-text {
+  height: 36.13px; //to equalize it to the height of the other mdb input group elements (the buttons made this one taller)
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}

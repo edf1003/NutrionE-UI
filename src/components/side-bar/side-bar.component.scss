@@ -1,0 +1,18 @@
+@import 'theme-variables';
+
+.sidenav-link.active {
+  color: $light !important;
+}
+
+.sidenav-link.active i {
+  color: $light !important;
+}
+
+.sidenav-link {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+ul.sidenav-collapse {
+  padding-left: 16px;
+}

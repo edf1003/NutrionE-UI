@@ -1,0 +1,20 @@
+{
+  "recommendations": [
+    "Angular.ng-template",
+    "cyrilletuzi.angular-schematics",
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "Fooxly.workspace",
+    "GitHub.copilot",
+    "Gruntfuggly.todo-tree",
+    "johnpapa.Angular2",
+    "PKief.material-icon-theme",
+    "pranaygp.vscode-css-peek",
+    "quicktype.quicktype",
+    "spmeesseman.vscode-taskexplorer",
+    "usernamehw.errorlens",
+    "VisualStudioExptTeam.vscodeintellicode",
+    "wix.vscode-import-cost"
+  ]
+}

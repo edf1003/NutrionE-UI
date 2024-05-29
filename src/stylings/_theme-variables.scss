@@ -1,0 +1,30 @@
+/*$primary: #b0bec5;
+$secondary: #78909c;
+$light: #e0e0e0;
+$dark: #212121;
+$success: #66bb6a;
+$warning: #ffca28;
+$danger: #ef5350;
+$info: #42a5f5;*/
+
+$primary: #46270a;
+$secondary: #947252;
+$light: #f5f5f5;
+$dark: #212121;
+$success: #66bb6a;
+$warning: #ffca28;
+$danger: #ef5350;
+$info: #42a5f5;
+
+$theme-colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'light': $light,
+  'dark': $dark,
+  'success': $success,
+  'warning': $warning,
+  'danger': $danger,
+  'info': $info,
+);
+
+$link-color: $light;

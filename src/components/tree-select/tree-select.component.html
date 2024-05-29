@@ -1,0 +1,22 @@
+<ng-container [class.not-interactive]="readOnly">
+  <h6 class="text-muted">{{ label }}</h6>
+  <div class="d-flex flex-wrap mb-2" *ngIf="selectedValues.length">
+    <div *ngFor="let e of selectedValues; let last = last; trackBy: trackBy">
+      <div class="d-flex flex-wrap align-items-center">
+        <button type="button" class="btn btn-secondary mb-1" (click)="unselectNode(e)">
+          {{ e.node[nodeLabelField] }}
+        </button>
+        <i class="fas fa-angle-right mx-2 mb-1" *ngIf="!last"></i>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex flex-wrap mb-2" *ngIf="currentTree?.length && !readOnly">
+    <button
+      type="button"
+      class="btn btn-outline-secondary me-1 mb-1"
+      (click)="selectNode(e)"
+      *ngFor="let e of currentTree; trackBy: trackBy">
+      {{ e.node[nodeLabelField] }}
+    </button>
+  </div>
+</ng-container>

@@ -1,0 +1,21 @@
+<div class="popconfirm-popover shadow-4">
+  <div class="popconfirm">
+    <h6 *ngIf="title">{{ title }}</h6>
+    <p class="popconfirm-message">
+      <span class="popconfirm-message-text">{{ text }}</span>
+    </p>
+    <div class="popconfirm-buttons-container">
+      <button type="button" [disabled]="executing" [ngClass]="acceptClass" (click)="executeAccept()">
+        {{ acceptText }}
+      </button>
+      <button
+        type="button"
+        *ngIf="!hideCancel"
+        [disabled]="executing"
+        [ngClass]="cancelClass"
+        (click)="executeCancel()">
+        {{ cancelText }}
+      </button>
+    </div>
+  </div>
+</div>

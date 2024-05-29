@@ -1,0 +1,17 @@
+<nav class="navbar sticky-top px-3 bg-light">
+  <a class="navbar-brand p-0 my-1" aria-label="Logo" [routerLink]="['/home']">
+    <span>
+      <img src="assets/imgs/logo.png" height="40" alt="NutrionE" />
+    </span>
+  </a>
+
+  <ul class="navbar-nav flex-row">
+    <ng-container *ngIf="user">
+      <li class="nav-item">
+        <button type="button" class="btn btn-link ms-2 p-2 text-danger">
+          <i class="fas fa-power-off fa-2x"></i>
+        </button>
+      </li>
+    </ng-container>
+  </ul>
+</nav>
