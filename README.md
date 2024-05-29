@@ -1,42 +1,61 @@
-#Publicar a fichero desde Visual Studio, en modo release
-Botón derecho -> Publish desde el proyecto VibracousticAudits
+# NutrionE - Interfaz Gráfica para Asistencia Nutricional
+NutrionE es una aplicación web desarrollada en Angular que proporciona una interfaz gráfica intuitiva para la asistencia nutricional y de ejercicio.
 
-#Instalar el Bundle de hosting de ASP.NET Core
-Contiene el módulo aspnetCore para IIS y el runtime del propio netcore
-https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-aspnetcore-5.0.5-windows-hosting-bundle-installer
+La aplicación permite a los usuarios obtener dietas personalizadas y recomendaciones de ejercicios para mantener un estilo de vida saludable, todo a través de una interfaz web amigable.
 
-#Dar permisos a la carpeta de publicación
-Dar permisos de control total para el grupo IIS_IUSRS
+NutrionE utiliza ChatGPT como modelo de lenguaje para generar tanto las dietas como los ejercicios, ofreciendo respuestas precisas y adaptadas a las necesidades individuales de cada usuario.
 
-#Crear usuario en SqlServer para el pool de IIS. Ejemplo en el appPool
-Es preferible hacerlo desde comando en lugar de desde el GUI de SQL Server Management
-CREATE LOGIN [IIS APPPOOL\DefaultAppPool] FROM WINDOWS;
-CREATE USER MyAppPoolUser FOR LOGIN [IIS APPPOOL\DefaultAppPool];
+Además, se integra con Google Fit para obtener datos relevantes y ofrecer recomendaciones más precisas.
 
-# ClientApp
+## 🚀 Inicio rápido
+Para comenzar a utilizar NutrionE, sigue estos pasos:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.5.
+1. Clona el repositorio:
 
-## Development server
+2. Navega al directorio del proyecto:
+$ cd NutrionE
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+3. Instala las dependencias:
+$ npm install
 
-## Code scaffolding
+4. Inicia la aplicación:
+$ ng serve
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+5. Abre tu navegador web y ve a http://localhost:4200.
 
-## Build
+## 📖 Descripción
+NutrionE proporciona una plataforma visual donde los usuarios pueden interactuar con la aplicación para obtener dietas y recomendaciones de ejercicios. La integración con Google Fit permite una personalización precisa basada en los datos de actividad del usuario.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## 🛠️ Tecnologías utilizadas
+NutrionE utiliza las siguientes tecnologías:
 
-## Running unit tests
+- Angular: Framework para desarrollar la interfaz de usuario.
+- Mdboostrap for Angular: Biblioteca de componentes para mejorar la UI.
+- Ngx-charts: Biblioteca para la creación de componentes gráficos.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## ✨ Funcionalidades
+NutrionE ofrece las siguientes funcionalidades:
 
-## Running end-to-end tests
+- Generación de dietas personalizadas.
+- Recomendaciones de ejercicios basadas en las necesidades individuales del usuario.
+- Integración con Google Fit para obtener datos de actividad física.
+- Interfaz de usuario intuitiva y fácil de usar.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## 🚧 Futuras mejoras
+En futuras versiones, se planea implementar las siguientes mejoras en NutrionE:
 
-## Further help
+- Mejoras en la generación de dietas y recomendaciones de ejercicios.
+- Integración con más plataformas de fitness y salud.
+- Mejoras en la interfaz de usuario.
+- Implementación de notificaciones y recordatorios personalizados.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## 🤝 Contribuidores
+Enrique Diez Fernández
+
+## 📞 Soporte
+Para cualquier consulta o comentario, no dudes en ponerte en contacto con nosotros a través del correo electrónico: enriquedifer@gmail.com
+
+## 📄 Licencia
+NutrionE está bajo la licencia MIT.
+
+## ¡Disfruta de NutrionE y mantente saludable! 😊
