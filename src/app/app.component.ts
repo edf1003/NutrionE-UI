@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
     private location: Location,
   ) {
     this.currentDate = new Date();
-    void this.router.navigate(['/home']);
+    void this.router.navigate(['/user']);
     if (window.innerWidth > this.SIDENAV_BREAKPOINT) this.sideNavOptions = { hidden: false, mode: 'side' };
   }
 
@@ -50,7 +50,7 @@ export class AppComponent implements OnInit {
           }),
         )
         .subscribe();
-    void this.router.navigate(['/home']);
+    void this.router.navigate(['/user']);
   }
 
   isLogin() {

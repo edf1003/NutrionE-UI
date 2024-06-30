@@ -12,6 +12,7 @@ const PROXY_CONFIG = [
     ws: true,
     target: target,
     secure: false,
+    changeOrigin: true,
     onProxyReqWs: (proxyReq, req, socket, options, head) => {
       socket.on('error', function (err) {
         console.warn('Socket error using onProxyReqWs event', err);
@@ -19,6 +20,19 @@ const PROXY_CONFIG = [
     },
     onError(err) {
       console.log('Suppressing WDS proxy connection error:', err);
+    },
+  },
+  {
+    context: ['/oauth2'],
+    target: 'https://accounts.google.com',
+    secure: true,
+    changeOrigin: true,
+    logLevel: 'debug',
+    onProxyReq: (proxyReq, req, res) => {
+      console.log('Proxying request:', req.url);
+    },
+    onError(err) {
+      console.log('Suppressing OAuth proxy connection error:', err);
     },
   },
 ];

@@ -1,29 +1,35 @@
 <div class="mx-3 pt-3 pb-5">
   <div class="d-flex justify-content-between align-items-center mb-3">
     <h5 class="ms-2"><i class="fa-solid fa-user me-2"></i>Tu perfil</h5>
-    <button class="btn btn-primary ml-auto" (click)="editUser()">Editar</button>
+    <div class="d-flex align-items-start">
+      <button class="btn btn-primary mx-1" (click)="getCredentials()">
+        <i class="fa-brands fa-google me-1"></i>Renovar
+      </button>
+      <button class="btn btn-primary ml-auto mx-1" (click)="editUser()">Editar</button>
+    </div>
   </div>
+
   <div class="row mt-3">
     <app-dashboard-value-card
       class="col-xs-12 col-md-6 col-xxl-3 mb-3"
       icon="fas fa-user"
       [title]="'Nombre'"
-      [value]="user.name" />
+      [value]="user?.name" />
     <app-dashboard-value-card
       class="col-xs-12 col-md-6 col-xxl-3 mb-3"
       icon="fa-solid fa-arrow-up-1-9"
       [title]="'Edad'"
-      [value]="user.age" />
+      [value]="user?.age" />
     <app-dashboard-value-card
       class="col-xs-12 col-md-6 col-xxl-3 mb-3"
       icon="fa-solid fa-venus-mars"
       [title]="'Género'"
-      [value]="user.gender === 0 ? 'Hombre' : 'Mujer'" />
+      [value]="user?.gender === 0 ? 'Hombre' : 'Mujer'" />
     <app-dashboard-value-card
       class="col-xs-12 col-md-6 col-xxl-3 mb-3"
       icon="fa-solid fa-carrot"
       [title]="'Tipo de dieta'"
-      [value]="enumsService.getDietTypesStatusLabel(user.dietType)" />
+      [value]="enumsService.getDietTypesStatusLabel(user?.dietType)" />
   </div>
   <hr class="mt-2 mb-4" />
   <div class="row">
@@ -31,21 +37,21 @@
       class="col-xs-12 col-md-6 col-xxl-3 mb-3"
       icon="fa-solid fa-arrows-up-down"
       [title]="'Altura'"
-      [value]="user.height + ' cm'" />
+      [value]="user?.height + ' cm'" />
     <app-dashboard-value-card
       class="col-xs-12 col-md-6 col-xxl-3 mb-3"
       icon="fa-solid fa-weight-hanging"
       [title]="'Peso'"
-      [value]="user.weight + ' kg'" />
+      [value]="user?.weight + ' kg'" />
     <app-dashboard-value-card
       class="col-xs-12 col-md-6 col-xxl-3 mb-3"
       icon="fa-solid fa-gauge-high"
       [title]="'Metabolismo basal'"
-      [value]="user.basalMetabolism" />
+      [value]="user?.basalMetabolism" />
     <app-dashboard-value-card
       class="col-xs-12 col-md-6 col-xxl-3 mb-3"
       icon="fa-solid fa-bullseye"
       [title]="'Objetivo'"
-      [value]="enumsService.getDietObjectiveLabel(user.dietObjective)" />
+      [value]="enumsService.getDietObjectiveLabel(user?.dietObjective)" />
   </div>
 </div>

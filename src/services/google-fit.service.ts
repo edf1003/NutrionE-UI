@@ -17,4 +17,8 @@ export class GoogleFitService {
   getDailyStepsForLastWeek(): Observable<number[]> {
     return this.http.get<number[]>(`${this.getBaseUrl()}/GetDailyStepsForLastWeek`).pipe();
   }
+
+  getCredentials(): Observable<unknown> {
+    return this.http.get(`${this.getBaseUrl()}/Access`).pipe();
+  }
 }

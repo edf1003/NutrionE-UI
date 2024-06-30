@@ -11,6 +11,8 @@ import { EnumsService } from 'src/services/enums.service';
 })
 export class RoutinesComponent implements OnInit {
   @Input() dailyRoutine: DailyRoutineDTO;
+  @Input() weeklySteps: number[] = [];
+  @Input() weeklyCalories: number[] = [];
   exerciseTypes: SelectItemDTO<ExerciseType>[];
   dataForm = this.formBuilder.group({
     exerciseType: [undefined as ExerciseType, Validators.required],

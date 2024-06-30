@@ -34,9 +34,7 @@ export class SideBarComponent {
   }
 
   setUrl() {
-    if (this.router.url.includes('home')) {
-      this.url = 'home';
-    } else if (this.router.url.includes('diets')) {
+    if (this.router.url.includes('diets')) {
       this.url = 'diets';
     } else if (this.router.url.includes('routines')) {
       this.url = 'routines';

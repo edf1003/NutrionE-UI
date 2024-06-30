@@ -12,10 +12,6 @@ interface BreadCorrespondance {
 }
 
 const breadcrumbRoot: BreadNode = {
-  home: {
-    name: 'Inicio',
-    children: {},
-  },
   diets: {
     name: 'Dietas',
     children: {},

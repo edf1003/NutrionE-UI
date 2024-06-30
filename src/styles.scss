@@ -5,6 +5,8 @@ $table-cell-padding-x: 0.75rem;
 @import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
 @import '@fortawesome/fontawesome-free/scss/solid.scss';
 @import '@fortawesome/fontawesome-free/scss/regular.scss';
+@import '@fortawesome/fontawesome-free/scss/brands.scss';
+
 @import 'mdb-angular-ui-kit/assets/scss/mdb.scss';
 
 // Dark theme
@@ -107,7 +109,6 @@ mdb-select.select-sm .select-clear-btn {
 }
 
 @media (max-width: 768px) {
-
   .card-body,
   .accordion-body {
     padding: 0.75rem;
@@ -155,7 +156,6 @@ mdb-select.select-sm .select-clear-btn {
 }
 
 @media (orientation: landscape) {
-
   .full-width .modal-content,
   .full-width .modal-dialog {
     width: 80%;
@@ -166,7 +166,6 @@ mdb-select.select-sm .select-clear-btn {
 }
 
 @media (min-width: 768px) {
-
   .full-width .modal-content,
   .full-width .modal-dialog {
     width: 768px;
@@ -212,7 +211,7 @@ mdb-select.select-sm .select-clear-btn {
 
 /* Nubebytes simple-table */
 
-.table.nb-simple-table> :not(:last-child)> :last-child>* {
+.table.nb-simple-table > :not(:last-child) > :last-child > * {
   border-bottom: 2px solid $primary;
 }
 
@@ -270,7 +269,7 @@ mdb-select.select-sm .select-clear-btn {
   min-width: -webkit-fill-available;
   min-width: fit-content;
 
-  &>mdb-option {
+  & > mdb-option {
     overflow: auto;
   }
 }
@@ -376,15 +375,15 @@ mdb-select.select-sm .select-clear-btn {
   left: -28px;
 }
 
-.tree-node-level-1>tree-node-wrapper>.node-wrapper>.node-content-wrapper::before {
+.tree-node-level-1 > tree-node-wrapper > .node-wrapper > .node-content-wrapper::before {
   display: none;
 }
 
-.tree-node-leaf>.node-wrapper>.node-content-wrapper::before {
+.tree-node-leaf > .node-wrapper > .node-content-wrapper::before {
   width: 25px;
 }
 
-tree-node:last-child>.tree-node>.tree-children::after {
+tree-node:last-child > .tree-node > .tree-children::after {
   border-left: none;
 }
 

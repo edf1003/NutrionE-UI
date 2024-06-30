@@ -3,6 +3,7 @@ import { MdbModalService } from 'mdb-angular-ui-kit/modal';
 import { EditUserModalComponent } from 'src/modals/edit-user-modal/edit-user-modal.component';
 import { UserDTO } from 'src/models/models-classes';
 import { EnumsService } from 'src/services/enums.service';
+import { GoogleFitService } from 'src/services/google-fit.service';
 import { UsersService } from 'src/services/users.service';
 
 @Component({
@@ -19,6 +20,7 @@ export class UserComponent {
     private usersService: UsersService,
     public enumsService: EnumsService,
     private modalService: MdbModalService,
+    private googleFitService: GoogleFitService,
   ) {}
 
   editUser() {
@@ -27,5 +29,9 @@ export class UserComponent {
       modalClass: 'modal-dialog-scrollable modal-fullscreen-right',
       data: { user: this.user },
     });
+  }
+
+  getCredentials() {
+    this.googleFitService.getCredentials().subscribe();
   }
 }

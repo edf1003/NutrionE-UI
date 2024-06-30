@@ -3,10 +3,6 @@ import { RouterModule, Routes, provideRouter, withComponentInputBinding } from '
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),
-  },
-  {
     path: 'diets',
     loadChildren: () => import('./pages/diets/diets.module').then(m => m.DietsModule),
   },
@@ -20,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'user',
     pathMatch: 'full',
   },
 ];

@@ -1,43 +1,68 @@
 <div class="mx-3 pt-3 pb-5">
-  <div class="d-flex justify-content-between align-items-center mb-3">
-    <h5 class="ms-2"><i class="fa-solid fa-list-ol me-2"></i>Lista de ejercicios</h5>
-    <div class="d-flex align-items-start">
-      <form [formGroup]="dataForm" #formTpl="ngForm" *ngIf="dataForm" class="d-flex align-items-start">
-        <app-nb-simple-select
-          formControlName="exerciseType"
-          label="Ejercicio"
-          [options]="exerciseTypes"
-          [clearButton]="false" />
-      </form>
-      <button class="btn btn-primary ms-2" (click)="createDailyRoutine()">Nueva</button>
-    </div>
-  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5 class="ms-2"><i class="fa-solid fa-list-ol me-2"></i>Lista de ejercicios</h5>
+        <div class="d-flex align-items-start">
+          <form [formGroup]="dataForm" #formTpl="ngForm" *ngIf="dataForm" class="d-flex align-items-start">
+            <app-nb-simple-select
+              formControlName="exerciseType"
+              label="Ejercicio"
+              [options]="exerciseTypes"
+              [clearButton]="false" />
+          </form>
+          <button class="btn btn-primary ms-2" (click)="createDailyRoutine()">Nueva</button>
+        </div>
+      </div>
 
-  <div *ngIf="dailyRoutine">
-    <div class="card mb-3">
-      <div class="card-body pt-3 pb-2 border-bottom border-1">
-        <h6 class="mb-2">Ejercicio 1</h6>
-        <p class="text-muted mb-0">{{ dailyRoutine?.exercises[0]?.name ?? '-' }}</p>
+      <div *ngIf="dailyRoutine">
+        <div class="card mb-3">
+          <div class="card-body pt-3 pb-2 border-bottom border-1">
+            <h6 class="mb-2">Ejercicio 1</h6>
+            <p class="text-muted mb-0">{{ dailyRoutine?.exercises[0]?.name ?? '-' }}</p>
+          </div>
+          <div class="card-body pt-3 pb-2 border-bottom border-1">
+            <h6 class="mb-2">Ejercicio 2</h6>
+            <p class="text-muted mb-0">{{ dailyRoutine?.exercises[1]?.name ?? '-' }}</p>
+          </div>
+          <div class="card-body pt-3 pb-2 border-bottom border-1">
+            <h6 class="mb-2">Ejercicio 3</h6>
+            <p class="text-muted mb-0">{{ dailyRoutine?.exercises[2]?.name ?? '-' }}</p>
+          </div>
+          <div class="card-body pt-3 pb-2 border-bottom border-1">
+            <h6 class="mb-2">Ejercicio 4</h6>
+            <p class="text-muted mb-0">{{ dailyRoutine?.exercises[3]?.name ?? '-' }}</p>
+          </div>
+          <div class="card-body pt-3 pb-2 border-bottom border-1">
+            <h6 class="mb-2">Ejercicio 5</h6>
+            <p class="text-muted mb-0">{{ dailyRoutine?.exercises[4]?.name ?? '-' }}</p>
+          </div>
+          <div class="card-body pt-3 pb-2 border-bottom border-1">
+            <h6 class="mb-2">Ejercicio 6</h6>
+            <p class="text-muted mb-0">{{ dailyRoutine?.exercises[5]?.name ?? '-' }}</p>
+          </div>
+        </div>
       </div>
-      <div class="card-body pt-3 pb-2 border-bottom border-1">
-        <h6 class="mb-2">Ejercicio 2</h6>
-        <p class="text-muted mb-0">{{ dailyRoutine?.exercises[1]?.name ?? '-' }}</p>
-      </div>
-      <div class="card-body pt-3 pb-2 border-bottom border-1">
-        <h6 class="mb-2">Ejercicio 3</h6>
-        <p class="text-muted mb-0">{{ dailyRoutine?.exercises[2]?.name ?? '-' }}</p>
-      </div>
-      <div class="card-body pt-3 pb-2 border-bottom border-1">
-        <h6 class="mb-2">Ejercicio 4</h6>
-        <p class="text-muted mb-0">{{ dailyRoutine?.exercises[3]?.name ?? '-' }}</p>
-      </div>
-      <div class="card-body pt-3 pb-2 border-bottom border-1">
-        <h6 class="mb-2">Ejercicio 5</h6>
-        <p class="text-muted mb-0">{{ dailyRoutine?.exercises[4]?.name ?? '-' }}</p>
-      </div>
-      <div class="card-body pt-3 pb-2 border-bottom border-1">
-        <h6 class="mb-2">Ejercicio 6</h6>
-        <p class="text-muted mb-0">{{ dailyRoutine?.exercises[5]?.name ?? '-' }}</p>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card mb-3 mt-5">
+        <div class="card-body pt-3 pb-2 border-bottom border-1">
+          <div *ngIf="weeklyCalories && weeklySteps; else tmplNoCredentials">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="mb-4">Tu resumen semanal</h5>
+            </div>
+            <div class=""><app-routine-chart [weeklySteps]="weeklySteps" [weeklyCalories]="weeklyCalories" /></div>
+          </div>
+          <ng-template #tmplNoCredentials>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="mb-3">No tienes credenciales</h5>
+            </div>
+            <div class="alert alert-warning" role="alert">
+              <p class="mb-0">No tienes credenciales para mostrar el resumen semanal.</p>
+            </div>
+          </ng-template>
+        </div>
       </div>
     </div>
   </div>

@@ -1,7 +1,6 @@
-<h5 class="mt-3">Tus calorias esta semana</h5>
-<ngx-charts-bar-vertical
-  [view]="[700, 300]"
-  scheme="natural"
+<ngx-charts-area-chart
+  [view]="[850, 397]"
+  scheme="cool"
   [results]="data"
   [gradient]="false"
   [xAxis]="true"
@@ -9,4 +8,5 @@
   [showXAxisLabel]="true"
   [showYAxisLabel]="true"
   xAxisLabel="Fecha"
-  yAxisLabel="Pasos" />
+  yAxisLabel="Cantidad"
+  [legend]="true" />
